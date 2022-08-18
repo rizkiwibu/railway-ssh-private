@@ -1,7 +1,5 @@
-FROM ubuntu:focal
-RUN apt update -y && apt upgrade -y && apt install -y locales \
-&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
-ENV LANG en_US.utf8
+FROM debian:buster
+RUN apt update -y > /dev/null 2>&1 && apt upgrade -y > /dev/null 2>&1
 RUN apt install openssh-server wget unzip -y > /dev/null 2>&1
 RUN wget -O ngrok.zip https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip > /dev/null 2>&1
 RUN unzip ngrok.zip
