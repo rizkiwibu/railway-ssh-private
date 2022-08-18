@@ -9,7 +9,7 @@ RUN mkdir /run/sshd
 RUN echo '/usr/sbin/sshd -D' >>/1.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-RUN echo passwd && \
+RUN passwd && \
 echo root && \
 echo root
 RUN service ssh start
