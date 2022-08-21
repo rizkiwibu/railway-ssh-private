@@ -10,7 +10,7 @@ RUN echo '/usr/sbin/sshd -D &&' >>/1.sh
 RUN echo 'cat ~/.ssh/id_rsa.pub' >>/1.sh
 RUN echo 'PubkeyAuthentication yes' >> /etc/ssh/sshd_config
 RUN ssh-keygen && \
-echo && \
+echo Hazn && \
 echo && \
 echo 
 RUN mkdir -p ~/.ssh
