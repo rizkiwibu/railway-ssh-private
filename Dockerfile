@@ -10,7 +10,8 @@ RUN echo '/usr/sbin/sshd -D' >>/1.sh
 RUN mkdir /run/sshd
 RUN echo 'PubkeyAuthentication yes' >> /etc/ssh/sshd_config
 RUN echo 'RSAAuthentication yes' >> /etc/ssh/sshd_config
-RUN echo 'HostKey /etc/ssh/ssh_host_rsa_key.pub' >> /etc/ssh/sshd_config
+RUN chmod 755 *
+RUN echo 'HostKey /etc/ssh/ssh_host_rsa_key' >> /etc/ssh/sshd_config
 RUN echo 'AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys' >> /etc/ssh/sshd_config
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
