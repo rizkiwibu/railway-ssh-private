@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM ubuntu:focal
 RUN apt update -y > /dev/null 2>&1 && apt upgrade -y > /dev/null 2>&1
 RUN apt install ssh wget unzip -y > /dev/null 2>&1
 WORKDIR /app/haznre
