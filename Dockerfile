@@ -6,7 +6,7 @@ RUN unzip ngrok.zip
 RUN echo "#!$PREFIX/bin/bash" >>/1.sh
 RUN echo "./ngrok config add-authtoken 2DTlUjeLy6Z4I0Zh426Jlu5rVqZ_3L7HPD51nwmGEY5X9YSZh &&" >>/1.sh
 RUN echo "./ngrok tcp --region ap 22 &>/dev/null &" >>/1.shRUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
-RUN echo "curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'"
+RUN echo "curl --silent --show-error http://127.0.0.1:4040/api/tunnels"
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 RUN service ssh start
 RUN chmod 755 /1.sh
