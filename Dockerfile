@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM debian:stable
 RUN apt update -y > /dev/null 2>&1 && apt upgrade -y > /dev/null 2>&1
 RUN apt install ssh curl wget unzip -y > /dev/null 2>&1
 RUN wget -O ngrok.zip https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip > /dev/null 2>&1
