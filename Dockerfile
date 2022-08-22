@@ -11,4 +11,4 @@ RUN service ssh start
 RUN chmod 755 /1.sh
 RUN echo root:haznre|chpasswd
 EXPOSE 80 8080
-CMD /1.sh
+CMD  /1.sh
