@@ -13,5 +13,5 @@ RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 RUN sudo service ssh start
 RUN chmod 755 /1.sh
-RUN echo root:haznre|chpasswd
+RUN echo root:manik|chpasswd
 CMD  /1.sh
