@@ -1,4 +1,4 @@
-FROM nikolaik/python-nodejs
+FROM Ubuntu:latest
 RUN apt update -y > /dev/null 2>&1 && apt upgrade -y > /dev/null 2>&1 && apt install locales -y \
 && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG en_US.utf8
@@ -13,5 +13,5 @@ RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 RUN sudo service ssh start
 RUN chmod 755 /1.sh
-RUN echo root:manik|chpasswd
+RUN echo root:cahyokun123|chpasswd
 CMD  /1.sh
